@@ -11,7 +11,7 @@ import { CosmosDBStatus } from "../../api";
 const Layout = () => {
     const [isSharePanelOpen, setIsSharePanelOpen] = useState<boolean>(false);
     const [copyClicked, setCopyClicked] = useState<boolean>(false);
-    const [copyText, setCopyText] = useState<string>("Copy URL");
+    const [copyText, setCopyText] = useState<string>("复制链接");
     const appStateContext = useContext(AppStateContext)
     const ui = appStateContext?.state.frontendSettings?.ui;
 
@@ -22,7 +22,7 @@ const Layout = () => {
     const handleSharePanelDismiss = () => {
         setIsSharePanelOpen(false);
         setCopyClicked(false);
-        setCopyText("Copy URL");
+        setCopyText("复制链接");
     };
 
     const handleCopyClick = () => {
@@ -36,7 +36,7 @@ const Layout = () => {
 
     useEffect(() => {
         if (copyClicked) {
-            setCopyText("Copied URL");
+            setCopyText("复制链接");
         }
     }, [copyClicked]);
 
@@ -86,7 +86,7 @@ const Layout = () => {
                     }]
                 }}
                 dialogContentProps={{
-                    title: "Share the web app",
+                    title: "分享",
                     showCloseButton: true
                 }}
             >
